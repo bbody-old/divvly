@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bill.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bill.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @bill.image %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @bill.cost %>
+</p>
+
+<p>
+  <strong>Payment group:</strong>
+  <%= @bill.payment_group %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bill.user %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @bill.group %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @bill.paid %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>
