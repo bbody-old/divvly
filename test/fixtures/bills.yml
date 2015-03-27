@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  image: MyString
+  cost: 1.5
+  payment_group_id: 
+  user_id: 
+  group_id: 
+  paid: false
+
+two:
+  name: MyString
+  description: MyText
+  image: MyString
+  cost: 1.5
+  payment_group_id: 
+  user_id: 
+  group_id: 
+  paid: false
