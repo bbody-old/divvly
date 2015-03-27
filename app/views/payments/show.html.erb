@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Payment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Payment %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @payment.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:method) %></dt>
+      <dd><pre class="prettyprint"><%= @payment.method %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:paid) %></dt>
+      <dd><pre class="prettyprint"><%= @payment.paid %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Bill:</strong>
-  <%= @payment.bill %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              payments_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_payment_path(@payment), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              payment_path(@payment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Method:</strong>
-  <%= @payment.method %>
-</p>
-
-<p>
-  <strong>Paid:</strong>
-  <%= @payment.paid %>
-</p>
-
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
