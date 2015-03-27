@@ -1,18 +1,40 @@
-<%= simple_form_for(@bill) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :image %>
-    <%= f.input :cost %>
-    <%= f.association :payment_group %>
-    <%= f.association :user %>
-    <%= f.association :group %>
-    <%= f.input :paid %>
+<%= form_for @bill, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :image, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :cost, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paid, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :paid, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  bills_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

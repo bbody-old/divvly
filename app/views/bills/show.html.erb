@@ -1,44 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Bill -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Bill %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bill.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @bill.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @bill.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= @bill.image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:cost) %></dt>
+      <dd><pre class="prettyprint"><%= @bill.cost %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:paid) %></dt>
+      <dd><pre class="prettyprint"><%= @bill.paid %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bill.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              bills_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_bill_path(@bill), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              bill_path(@bill),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @bill.image %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @bill.cost %>
-</p>
-
-<p>
-  <strong>Payment group:</strong>
-  <%= @bill.payment_group %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @bill.user %>
-</p>
-
-<p>
-  <strong>Group:</strong>
-  <%= @bill.group %>
-</p>
-
-<p>
-  <strong>Paid:</strong>
-  <%= @bill.paid %>
-</p>
-
-<%= link_to 'Edit', edit_bill_path(@bill) %> |
-<%= link_to 'Back', bills_path %>
