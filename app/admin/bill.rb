@@ -1,4 +1,5 @@
 ActiveAdmin.register Bill do
+  permit_params :name, :description, :image, :cost, :paid
 
 
   # See permitted parameters documentation:
