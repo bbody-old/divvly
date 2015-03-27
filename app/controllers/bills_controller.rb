@@ -29,6 +29,7 @@ class BillsController < ApplicationController
   # POST /bills.json
   def create
     @bill = Bill.new(bill_params)
+    @bill.user = current_user
 
     respond_to do |format|
       if @bill.save
