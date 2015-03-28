@@ -4,7 +4,7 @@ class BillsController < ApplicationController
   before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
 
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /bills
   # GET /bills.json
   def index
@@ -30,6 +30,21 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(bill_params)
     @bill.user = current_user
+    @bill.save
+    cost = bill_params[:cost]
+    pgi = bill_params[:payment_group_id]
+
+    number = PaymentGroup.count('id', :id => pgi)
+
+    div = cost.to_f / number.to_f
+
+    people = User.where.not(id: current_user.id)
+
+    people.each do |person|
+      payment = Payment.new(user_id: person.id, bill_id: @bill.id, amount: div, paid: false, method: "PayPal")
+      payment.save!
+    end
+
 
     respond_to do |format|
       if @bill.save

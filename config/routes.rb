@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'pages#home'
+
   resources :bills
 
   resources :payments

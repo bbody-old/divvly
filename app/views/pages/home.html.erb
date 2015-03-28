@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+	<div class="row">
+		<%= render partial: 'elements/pending_out' %>
+		<%= render partial: 'elements/pending_in' %>
+	</div>
+<% else %>
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<% end %>

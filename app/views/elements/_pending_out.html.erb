@@ -1,0 +1,29 @@
+
+  <div class="col-md-6">
+  <h2>Pending</h2>
+
+<% @payments = Payment.where(:user_id => current_user, :paid => false) %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>What</th>
+      <th>Where</th>
+      <th>When</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.bill.name %></td>
+        <td><%= payment.bill.payment_group.name %></td>
+        <td><%= payment.created_at.strftime("%H:%M %d-%m-%Y") %></td>
+        <td><%= payment.amount %></td>
+        <td>Yes/No</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
