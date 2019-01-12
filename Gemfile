@@ -51,3 +51,5 @@ gem 'bootstrap-sass-extras'
 gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+
+gem 'rails_12factor', group: :production
