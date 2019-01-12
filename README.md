@@ -1,4 +1,4 @@
-== Divvly
+# Divvly
 
 Divvly is a bill splitting websites for housemates.
 
