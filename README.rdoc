@@ -1,28 +1,11 @@
-== README
+== Divvly
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Divvly is a bill splitting websites for housemates.
 
-Things you may want to cover:
+Entry for [Startup Weekend FinTech, Melbourne 2015](http://communities.techstars.com/australia/startup-weekend/5974), winning 2nd place.
 
-* Ruby version
+## Built with
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Rails 4.x
+* Ruby 2.x
+* Bootstrap 2.x
