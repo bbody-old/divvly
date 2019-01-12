@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#user1 = User.create! :name => 'Brendon', :email => 'brendon.body@gmail.com', username: 'brendonbody', :password => 'topsecret', :password_confirmation => 'topsecret'
-#user2 = User.create! :name => 'Matty Johns', :email => 'matthew@gmail.com', username: 'mattyjohns', :password => 'topsecret', :password_confirmation => 'topsecret'
-#user3 = User.create! :name => 'Nathan Ahmed', :email => 'matthew@gmail.com', username: 'nahmed', :password => 'topsecret', :password_confirmation => 'topsecret'
+user1 = User.create! :name => 'Brendon', :email => 'brendon.body@gmail.com', username: 'brendonbody', :password => 'topsecret', :password_confirmation => 'topsecret'
+user2 = User.create! :name => 'Matty Johns', :email => 'matthew@gmail.com', username: 'mattyjohns', :password => 'topsecret', :password_confirmation => 'topsecret'
+user3 = User.create! :name => 'Nathan Ahmed', :email => 'matthew@gmail.com', username: 'nahmed', :password => 'topsecret', :password_confirmation => 'topsecret'
 
 group = Group.create! :name => "Our house"
 PaymentGroup.create! :name => "Vegetarians", group_id: group
